@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+   
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script> 
+
+   
+   
+
+   
+    <style type="text/css">
+        #bt1 {
+            height: 3px;
+            width: 3px;
+        }
+        #bt2 {
+            height: 3px;
+            width: 3px;
+        }
+        #bt3 {
+            height: 3px;
+            width: 3px;
+        }
+        #bt4 {
+            height: 3px;
+            width: 3px;
+        }
+        #bt5 {
+            height: 3px;
+            width: 3px;
+        }
+    </style>
+
+   
+   
+
+   
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div>
+            <div class="Rewards" style="width:60px; padding:10px;margin:10px; height: 264px;border-color:black"> Rewards
+            <div class="block" id="r1" style="width:25px;height:25px;background-color:lightgreen;padding:10px;margin:5px">
+            <div id="div1" class="button" style="width:5px; height: 5px; left:66px"><button id="bt1"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTHkyHtUTUaBvSN4Jh-ie1bqTr_UFbkkgyhUKsw57W83tREaa_y&usqp=CAU" style="height: 3px; width: 3px" /></button></div>
+                R1
+            </div>
+            <div class="block" id="r2" style="width:25px;height:25px;background-color:lightgreen;padding:10px;margin:5px">
+                 <div id="div2" class="button"  style="width:5px; height: 5px; left:66px "><button id="bt2"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTHkyHtUTUaBvSN4Jh-ie1bqTr_UFbkkgyhUKsw57W83tREaa_y&usqp=CAU" style="height: 3px; width: 3px" /></button></div>
+                R2</div>
+            <div class="block" id="r3" style="width:25px;height:25px;background-color:lightgreen;padding:10px;margin:5px">
+                 <div id="div3" class="button" style="width:5px; height: 5px; left:66px; "><button id="bt3"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTHkyHtUTUaBvSN4Jh-ie1bqTr_UFbkkgyhUKsw57W83tREaa_y&usqp=CAU" style="height: 3px; width: 3px" /></button></div>
+                R3
+            </div>
+                <div class="block" id="r4" style="width:25px;height:25px;background-color:lightgreen;padding:10px;margin:5px">
+                 <div id="div4" class="button" style="width:5px; height: 5px; left:66px; "><button id="bt4"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTHkyHtUTUaBvSN4Jh-ie1bqTr_UFbkkgyhUKsw57W83tREaa_y&usqp=CAU" style="height: 3px; width: 3px" /></button></div>
+                    R4
+            </div>
+                <div class="block" id="r5" style="width:25px;height:25px;background-color:lightgreen;padding:10px;margin:5px">
+                    <div id="div5" class="button" style="width:5px; height: 5px; left:66px; "><button id="bt5"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTHkyHtUTUaBvSN4Jh-ie1bqTr_UFbkkgyhUKsw57W83tREaa_y&usqp=CAU" style="height: 3px; width: 3px" /></button></div>
+                    R5
+            </div>
+               
+           </div>
+            <div id="categories" style="width:442px; overflow:auto;position:absolute;left:125px; top: 22px; height: 277px;">
+            <div id="header" style="text-align:center"><h3>Categories</h3></div>
+            <div class="category" id="c1" style="width:50px;position:absolute;padding:10px;margin:5px; top: 33px; height: 211px; left: 2px;border-color:black">
+                C1
+            </div>
+                <div class="category" id="c2" style="width:50px;position:absolute;left:82px; padding:10px;margin:5px; top: 33px; height: 211px;border-color:black">
+                C2
+                </div>
+                <div class="category" id="c3" style="width:50px;position:absolute;left:166px; padding:10px;margin:5px; top: 33px; height: 211px;border-color:black">
+                C3
+                </div>
+                <div class="category" id="c4" style="width:50px;position:absolute;left:252px; padding:10px;margin:5px; top: 33px; height: 211px;border-color:black">
+                C4
+                </div>
+                <div class="category" id="c5" style="width:50px;position:absolute;left:338px; padding:10px;margin:5px; top: 33px; height: 211px;border-color:black">
+                C5
+                </div>   
+          </div>
+         
+</div>
+    </form>
+   
+</body>
+    
+</html>
+ <script type="text/javascript">
+     $(document).ready(function () {
+         $(".block").draggable({ helper: 'clone' });
+       
+         $(".category").droppable(
+             {
+                 accept: ".block",
+                 drop: function (event,ui) {
+                     var droppedItem = $(ui.draggable).clone();
+                     $(this).append(droppedItem);
+                    
+                    
+                    
+                 }
+
+                 
+             });
+        
+         $("#bt1").click(function () {
+             $("#r1").remove();
+         });
+         $("#bt2").click(function () {
+             $("#r2").remove();
+         });
+         $("#bt3").click(function () {
+             $("#r3").remove();
+         });
+         $("#bt4").click(function () {
+             $("#r4").remove();
+         });
+
+         $("#bt5").click(function () {
+             $("#r5").remove();
+         });
+     });
+    
+
+ </script>
+
+   
+
+
